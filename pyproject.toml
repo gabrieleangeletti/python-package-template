@@ -1,0 +1,5 @@
+[tool.black]
+exclude = ".git|.hg|.mypy_cache|.nox|.tox|.venv|_build|buck-out|build|dist"
+line-length = 110
+target-version = ["py37"]
+skip-numeric-underscore-normalization = true
