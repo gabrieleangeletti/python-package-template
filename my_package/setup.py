@@ -8,4 +8,5 @@ setup(
     include_package_data=True,
     python_requires=">=3.7",
     packages=find_packages(),
+    entry_points={"console_scripts": ["my_package=my_package.main:main"]},
 )
