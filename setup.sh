@@ -36,6 +36,10 @@ function setup_pyenv() {
             echo "Pyenv not found. Please follow the instructions at https://github.com/pyenv/pyenv#installation."
             exit 1
         fi
+    else
+        if [ ${SYSTEM} == "Linux" ]; then
+            pyenv update
+        fi
     fi
     eval "$(pyenv init -)"
 }
