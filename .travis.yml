@@ -1,9 +1,9 @@
 language: python
-  python:
-    - "3.7"
-    - "pypy3"
-  install:
-    - ./setup.sh
-    - pipenv install --deploy --dev
-  script:
-    - ./test.sh
+python:
+  - "3.7"
+  - "pypy3"
+install:
+  - ./setup.sh
+  - pipenv install --deploy --dev
+script:
+  - ./test.sh
