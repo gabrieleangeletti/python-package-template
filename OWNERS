@@ -1,0 +1,4 @@
+branch-managers:
+  master:
+    managers:
+      - gabrieleangeletti
