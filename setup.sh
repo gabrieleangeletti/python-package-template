@@ -9,7 +9,7 @@ set -o nounset
 # Catch the error in case mysqldump fails (but gzip succeeds) in `mysqldump | gzip`
 set -o pipefail
 
-PYTHON_VERSION=3.7.4
+PYTHON_VERSION=3.7.1
 
 if [ "$(uname)" == "Darwin" ]; then
     SYSTEM="Darwin"
@@ -35,10 +35,6 @@ function setup_pyenv() {
         elif [ ${SYSTEM} == "Linux" ]; then
             echo "Pyenv not found. Please follow the instructions at https://github.com/pyenv/pyenv#installation."
             exit 1
-        fi
-    else
-        if [ ${SYSTEM} == "Linux" ]; then
-            pyenv update
         fi
     fi
     eval "$(pyenv init -)"
