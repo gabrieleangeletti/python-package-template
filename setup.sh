@@ -9,7 +9,7 @@ set -o nounset
 # Catch the error in case mysqldump fails (but gzip succeeds) in `mysqldump | gzip`
 set -o pipefail
 
-PYTHON_VERSION=3.7.4
+PYTHON_VERSION=3.7.1
 
 if [ "$(uname)" == "Darwin" ]; then
     SYSTEM="Darwin"
