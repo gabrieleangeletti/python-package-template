@@ -9,7 +9,7 @@ set -o nounset
 # Catch the error in case mysqldump fails (but gzip succeeds) in `mysqldump | gzip`
 set -o pipefail
 
-PYTHON_VERSION=3.7.1
+PYTHON_VERSION=3.10.2
 
 if [ "$(uname)" == "Darwin" ]; then
     SYSTEM="Darwin"
@@ -64,17 +64,17 @@ function setup_pip() {
     fi
 }
 
-function setup_pipenv() {
+function setup_poetry() {
     if ! [ $(command -v pipenv) ]; then
-        echo "Installing pipenv."
-        python -m pip install pipenv
+        echo "Installing poetry."
+        curl -sSL https://install.python-poetry.org | python -
     fi
 }
 
 setup_pyenv
 setup_python
 setup_pip
-setup_pipenv
+setup_poetry
 
 cat <<EOF
 Your Python environment is now ready. Please run:
