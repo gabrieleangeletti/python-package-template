@@ -65,7 +65,7 @@ function setup_pip() {
 }
 
 function setup_poetry() {
-    if ! [ $(command -v pipenv) ]; then
+    if ! [ $(command -v poetry) ]; then
         echo "Installing poetry."
         curl -sSL https://install.python-poetry.org | python -
     fi
@@ -79,11 +79,13 @@ setup_poetry
 cat <<EOF
 Your Python environment is now ready. Please run:
 
-    >>> pipenv install --deploy --dev
+    >>> poetry install
 
 To setup the virtual environment on your machine.
 
-To activate the virtual environment you can use either one of:
-    (1) >>> source $(pipenv --venv)/bin/activate
-    (2) >>> pipenv shell
+To activate the virtual environment you can use:
+    >>> poetry shell
+
+Or you can prefix each command with:
+    >>> poetry run <command>
 EOF
